@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDom from 'react-dom'
+ 
+const Book1={
+  author: "mouwahed mhadhbi",
+  bookName:"birdman or the unexpected virtue of ignorance"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+}
+const Book2 = {
+  author: "yahya mhadhbi",
+  bookName:"whiplash"
+}
+function Greeting() {
+  return (
+    <div>
+      <Book author={Book1.author} bookName={Book1.bookName} />
+      <Book author={Book2.author} bookName={Book2.bookName} />
+    </div>
+  )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function Book(props) {
+  return (
+    <div>
+      <h2>{props.author}</h2>
+      <h2>{ props.bookName }</h2>
+    </div>
+  )
+}
+
+ReactDom.render(<Greeting />,document.getElementById('root'))
